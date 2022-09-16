@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: api_book
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgres://admin:1234@db:5432/book_klub_db
+      - SECRET_KEY=123456
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+
+  db:
+    container_name: db_book_klub
+    image: postgres:14
+    ports:
+      - 5431:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=book_klub_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d book_klub_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s

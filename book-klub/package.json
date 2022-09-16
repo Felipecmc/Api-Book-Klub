@@ -1,0 +1,48 @@
+{
+  "name": "book-klub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Book-Klub/book-klub.git",
+  "author": "lorenammp <lorenammpaula@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
+    "build": "tsc",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "test": "cross-env NODE_ENV=test SECRET_KEY=1234 jest",
+    "start": "node dist/src/server.js"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/nodemailer": "^6.4.6",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^29.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.7.15",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "cross-env": "^7.0.3",
+    "jest": "^29.0.2",
+    "sqlite3": "^5.0.11",
+    "supertest": "^6.2.4",
+    "ts-jest": "^29.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "dotenv": "^16.0.2",
+    "eslint": "^8.23.0",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.7.8",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.9",
+    "uuid": "^8.3.2"
+  }
+}
